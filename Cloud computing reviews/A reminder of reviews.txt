@@ -1,0 +1,9 @@
+A reminder from the syllabus about the reviews: "The review should be relatively short (about one paragraph). It should not summarize the paper or repeat it; we have all read the paper already. Instead your review should include at least two comments on the paper that supply information not in the paper itself. For example, a comment might be:
+
+a suggestion to build on or extend the paper's ideas in future work
+a criticism of the paper
+an advantage of the paper (not discussed in the paper)
+an alternative solution for the solutions discussed in the paper
+a response to another student's comment
+ 
+You are encouraged to read and comment on the other students' reviews. However, please write down notes on your own thoughts independently prior to reading other students' reviews. Collaborating with other students to write reviews is not permitted. Your reviews should ideally include original ideas that do not appear in the other students' reviews."

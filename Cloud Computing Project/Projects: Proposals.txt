@@ -1,0 +1,88 @@
+As a class project, you will conduct either an original research project, build a system, or reproduce the results of a paper related to cloud computing. The class project will prepare you to develop new designs, reason about your design choices, and/or deeply understand the design and evaluation of existing research on cloud computing. For the final report, you will aim to prepare an 6 page writeup on your project, just like the research papers you have read in class. For example, the next paper we will read on consistent updates (from HotNets) is a good model.
+
+ 
+
+Project proposal: The project proposal deadline is March 2, 5pm. Email your proposals to me: soudeh@cs.jhu.edu
+
+
+From the syllabus:  “During the first month of the class, you should think about the topic you want to work on and find partners. You are welcome (and encouraged) to explore your own ideas. However, you can also talk with the instructor who will suggest some topics (you need to set an appointment). You will need to submit a project proposal. The proposal should be at most one page and include each of the following:
+
+the problem you plan to address
+what will be your first steps to attack the problem
+what is the most closely related work, with either
+citations of at least 2 similar systems (if you are building a system)
+at least 3 academic paper citations (if you are working on a research project, either conducting original research or reproducing others' research). You should explain why your proposed problem (or the problem in your selected paper, if you are reproducing others’ research) is different than those or why your proposed solution is better. You should actively search for related work, not just cite systems and papers that the instructor mentions.
+Who the people on your team are and how you plan to partition the work among the team.
+The proposal can be short. It should simply demonstrate that you have a plausible project and know how to attack it.”
+
+
+You are welcome -- and strongly encouraged -- to come up with your own ideas for your project, but here are a few (?) broad suggestions and pointers for those of you who are still searching:
+
+#1: For original research projects:
+
+Resources:
+The course webpage has some pointers, under “Resources”: https://www.cs.jhu.edu/~soudeh/teaching/cloud/spring_2020/#references 
+Some survey papers with ideas/suggestions:
+The Cost of a Cloud: Research Problems in Data Center Networks (Greenberg et al.)
+Icebergs in the Clouds: the Other Risks of Cloud Computing (Ford)
+Cloud Computing: Recent trends, challenges and open problems (Lagar-Cavilla and Joshi)
+Hypervisors as a Foothold for Personal Computer Security: An Agenda for the Research Community (Zaharia et al.)
+ 
+
+Some broad areas:
+Burst tolerant datacenters: We have seen some common cloud workloads (such as search and MapReduce jobs), the datacenter topologies (various versions of Clos), and the fact that they are not burst-tolerant (recall from the Jupiter paper from Google that the utilization is ~25% because of bursts). How can you redesign datacenters to be burst tolerant?
+Server/L4 load balancing. Many of the load balancers deployed in practice such as Maglev (https://www.usenix.org/conference/nsdi16/technical-sessions/presentation/eisenbud) are load oblivious -- they distribute the load without taking into account the congestion/current load of nodes. How can you redesign these systems to take the load into account?
+Load balancing in Jellyfish. We saw this novel design for building datacenters that has some attractive properties such as incremental expansion. Unfortunately, load balancing in random graphs is a challenge because path lengths are different. So existing protocols like ECMP won’t work well. Designing a load balancer for Jellyfish is an open challenge that you can tackle.
+Network I/O operations can become a major bottleneck in clouds. The goal will be investigating the root-causes of existing systems inefficiencies and/or redesigning them. See this for some background: https://www.usenix.org/conference/nsdi13/technical-sessions/presentation/xu_yunjing
+Revisiting scheduling in big data systems: many big data systems deploy simple schedulers such as round robin schedulers that are known to suboptimal for minimizing job completion times. A key challenge for deploying provably optimal schedulers such as EDF (Earliest Deadline First) and SJF (Shortest Job First) is predicting the “length” or deadlines of jobs. How can you predict deadlines or job lengths?
+Costs of virtualization. The tail latency in virtualized clouds can be 3-4x higher than the non-virtualized running of the same workload. Where does the time go in virtualized clouds?
+A desirable property in datacenters is “losslessness”, i.e., providing the guarantee that packets are never dropped because of congestion. The combination of current datacenter topologies and techniques for guaranteeing losslessness causes a set of significant problems such as deadlocks (see this: https://dl.acm.org/citation.cfm?id=3005760). The question then is, can we redesign datacenter topologies and/or the techniques for loss prevention that are provably deadlock-free?
+
+
+#2: For building systems:
+
+Resources:
+Programmable networking tools and platforms such as P4: https://p4.org/ 
+Cloud services: Google Cloud Training lab, Qwiklabs (https://www.qwiklabs.com), has various tutorials on various topics that can give you some ideas about the systems you may want to build (and how). Erfan had a tutorial on these and has posted his slides https://piazza.com/class/k5sdecu2mkp7np?cid=22 . You should be able to use Qwiklabs with your jhu.edu addresses free of charge (let us know if you cannot and we will try to fix it). Note that this is separate from the Google Cloud Platform credits (you should have received an email from me about this) that you can use to build your cloud systems.
+Requirement: For the projects in this category, you should have a set of requirements/trade-offs, a system architecture designed specifically for your requirements, a working prototype, and a set of experiments that evaluate the effectiveness of your design.
+A few options:
+Verifiable cloud: we have seen some critical components of cloud computing (such as firewall, NATs, and load balancer) and have also seen that changes are hard to manage in cloud systems and result in outages. The question is, can we redesign these systems (using state-of-the-art tools and technologies) such that they are verifiable? That is, they are guaranteed to always work correctly in a dynamic, changing system. For some context, you can check out our recent paper in NSDI 2020 on the topic: https://www.cs.jhu.edu/~soudeh/research/papers/liveness_nsdi20fall.pdf and come talk to me for more specific directions.
+A cloud-based enterprise resource management system, harnessing the right selection of virtualization and storage options that a cloud provider offers.
+A cloud-based emotion detection app (using pre-trained AI/ML models, https://docs.google.com/document/d/17l6ixPIBiMWZOdJuFUlEBFnqogVSLwkXwnmwvSiKwcQ/edit#heading=h.ho89r85sas78, to detect emotions in text and pictures).
+
+
+#3: For reproducing existing research
+
+Resources: same resources that you will use for finding research topics. See the “resources” part under “original research” above
+Some specific papers: 
+“Is advance knowledge of flow sizes a plausible assumption?”, NSDI 2019,  https://www.usenix.org/conference/nsdi19/presentation/dukic
+Bobtail: Avoiding long tails in the cloud”, NSDI 2013, https://www.usenix.org/conference/nsdi13/technical-sessions/presentation/xu_yunjing
+“Abstractions for Network Update” (the full version of review 10 paper) http://www.cs.cornell.edu/~jnfoster/papers/frenetic-consistent-updates.pdf
+
+“Jellyfish: Networking Data Centers Randomly” http://pbg.cs.illinois.edu/papers/jellyfish-nsdi12.pdf
+
+“VL2: A Scalable and Flexible Data Center Network” https://www.microsoft.com/en-us/research/publication/vl2-a-scalable-and-flexible-data-center-network/?from=http%3A%2F%2Fresearch.microsoft.com%2Fpubs%2F80693%2Fvl2-sigcomm09-final.pdf
+
+“Controlling Queue Delay” https://queue.acm.org/detail.cfm?id=2209336
+
+“Less Is More: Trading a Little Bandwidth for Ultra-Low Latency in the Data Center” https://www.usenix.org/conference/nsdi12/technical-sessions/presentation/alizadeh
+
+“Towards Predictable Datacenter NetworksTowards Predictable Datacenter Networks” http://conferences.sigcomm.org/sigcomm/2011/papers/sigcomm/p242.pdf
+
+“Deconstructing Datacenter Packet Transport” https://web.stanford.edu/~skatti/pubs/hotnets12-pfabric.pdf
+
+“ASAP: A Low-Latency Transport Layer” http://conferences.sigcomm.org/co-next/2011/papers/1569469081.pdf
+
+“Improving Datacenter Performance and Robustness withMultipath TCP” http://conferences.sigcomm.org/sigcomm/2011/papers/sigcomm/p266.pdf
+
+“How Hard Can It Be? Designing and Implementing a Deployable Multipath TCP” https://www.usenix.org/conference/nsdi12/technical-sessions/presentation/raiciu
+
+“Design, implementation and evaluation of congestion controlfor multipath TCP” https://static.usenix.org/event/nsdi11/tech/full_papers/Wischik.pdf
+
+“Hedera: Dynamic Flow Scheduling for Data Center Networks” https://www.usenix.org/legacy/event/nsdi10/tech/full_papers/al-fares.pdf 
+
+ 
+
+These are all intentionally broad. The idea is that you will narrow one down to find a concrete problem that you are excited about. I encourage you all to set meetings with me to discuss your projects but please "do your homework" before we meet: do some research and come to the meeting prepared to discuss your idea for your proposal.
+
+ 
