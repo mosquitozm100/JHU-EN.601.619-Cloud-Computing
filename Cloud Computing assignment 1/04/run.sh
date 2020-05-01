@@ -1,0 +1,1 @@
+cat mr.data | ./map.py | sort | ./reduce.py | sort -n -r -k 2 -t $'\t' > log
