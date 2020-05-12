@@ -1,0 +1,120 @@
+Delivered-To: mosquitozm100@gmail.com
+Received: by 2002:a2e:9ac7:0:0:0:0:0 with SMTP id p7csp1526697ljj;
+        Sun, 10 May 2020 15:19:39 -0700 (PDT)
+X-Google-Smtp-Source: APiQypIEGpGRoAxHurouVW79LVruKYYqrHS4o8xhoZiANOtyv8fuC63Ej9Y4orJx2WyqDyM4kSlZ
+X-Received: by 2002:a37:e104:: with SMTP id c4mr6413930qkm.207.1589149179430;
+        Sun, 10 May 2020 15:19:39 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1589149179; cv=none;
+        d=google.com; s=arc-20160816;
+        b=x4F1dBl1AzviUuXpGGlKrMtZSBRumUbk7wvIVklWUhbiTV/OHrI+aoQNfSSRdJknQP
+         VgSm7qvdi8SuBV3fkBa+VKIFmFiKjIlhmLUAVKuSDEsvHPlZjzkyjFSLQTTT8xGEKjT+
+         3fPTiV+2N+5ZvLqu4/Q2I7cNihuA1vi3wnWmjACYUVDU0nOmL8Vqi1ISNyvdPlTKc0fT
+         8TDZPZghBnjMNKAcryIb934UCQsrknvZGGoXhFR+CQuF41cSoiKoEMTK6C32CUwNgSJ0
+         AhfdSsWSDWcZnh8glXBQliktkVwXjgVyNJjvTsZpi2zeRY+EzwAU7bPPoX7n2d5Bml5X
+         EhwQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=user-agent:message-id:references:in-reply-to:mail-reply-to:reply-to
+         :subject:to:from:date:content-transfer-encoding:mime-version;
+        bh=BejMFQlkq3jwjwaXxlCnilhj2TdE6G0FBfovT/TagQg=;
+        b=LPh6z7g30xsIyJOyIEp8x9DbV5FCwBqGEMvdpUxo46aYvkTLOJxe8A51heYnBGA7MC
+         pLqdEjYa2FERR7gzLahrwCNW950Iq6Cc+Kpgh9+WV4QhDzXINXQYwYkGKoInEiTwf3ua
+         Ffmx1d+HP7kqRgS9Nf7aKyobwLXVwxmTLTd3c/8FnyOy9dsUryI/7B0cF7JZ4T42M7TY
+         fcwR7J24PWZeSBSaB6a2mECl6XNL+QfbHcl1Z1JIe20XS3kJvQ0hTXW2wJBg+P0BmB84
+         OaiXI5LtRjRGfltnraXml3otLrB2+jdjrVRlTS22LtGoEfvnDH6LaxTl6B9GTOzs3dwn
+         ojXg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of soudeh@cs.jhu.edu designates 128.220.13.50 as permitted sender) smtp.mailfrom=soudeh@cs.jhu.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=cs.jhu.edu
+Return-Path: <soudeh@cs.jhu.edu>
+Received: from blaze.cs.jhu.edu (blaze.cs.jhu.edu. [128.220.13.50])
+        by mx.google.com with ESMTPS id m130si966897qke.166.2020.05.10.15.19.39
+        for <mosquitozm100@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 10 May 2020 15:19:39 -0700 (PDT)
+Received-SPF: pass (google.com: domain of soudeh@cs.jhu.edu designates 128.220.13.50 as permitted sender) client-ip=128.220.13.50;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of soudeh@cs.jhu.edu designates 128.220.13.50 as permitted sender) smtp.mailfrom=soudeh@cs.jhu.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=cs.jhu.edu
+Received: from web3.cs.jhu.edu (web3.cs.jhu.edu [128.220.13.76])
+        (user=soudeh mech=LOGIN bits=0)
+        by blaze.cs.jhu.edu (8.14.4/8.14.4) with ESMTP id 04AMJcsh004153
+        (version=TLSv1/SSLv3 cipher=DHE-RSA-AES128-SHA bits=128 verify=NO)
+        for <mosquitozm100@gmail.com>; Sun, 10 May 2020 18:19:38 -0400
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8;
+ format=flowed
+Content-Transfer-Encoding: 8bit
+Date: Sun, 10 May 2020 18:19:38 -0400
+From: Soudeh Ghorbani <soudeh@cs.jhu.edu>
+To: Mou Zhang <mosquitozm100@gmail.com>
+Subject: Re: Assignment2 Mou Zhang
+Reply-To: soudeh@cs.jhu.edu
+Mail-Reply-To: soudeh@cs.jhu.edu
+In-Reply-To: <CAF9xx2bUuv2i-mRtdU2WMTdY6L1Fy8sBfdEZhZyAtmAP5g2xrw@mail.gmail.com>
+References: <CAF9xx2bUuv2i-mRtdU2WMTdY6L1Fy8sBfdEZhZyAtmAP5g2xrw@mail.gmail.com>
+Message-ID: <8968b622596fdaef23d92b611ba9306c@cs.jhu.edu>
+X-Sender: soudeh@cs.jhu.edu
+User-Agent: Roundcube Webmail/1.0.12
+
+Mou,
+
+Thanks! Great job overall. For a few issues/errors that were not covered 
+in class, please find some notes below.
+
+* Q1(a): it’s better to list some of the issues with TCP in 
+*datacenters* specifically. Most of the listed issues are general ones. 
+Also, please explain why TCP is not optimal. A few of the reasons you 
+give -- like this one: “The flow in the datacenter is a mix of short 
+flow and long flow, short flows tends to have low latency while the long 
+flow wants the high throughputs” -- seem relevant to datacenters but 
+they do not elaborate on how TCP is not optimal.
+
+* Q1(c): “The remedy is consistent with the end-to-end principle. This 
+is because that this change has nothing to do with the content of each 
+packet.” -- the end-to-end principle is not about changing the content 
+of the packet or not. It’s an architectural principle about where 
+functions should be placed, in the core of the network or at the edge.
+
+* Q2(b): with the forwarding mechanism explained in the assignment 
+(e.g., rules matching prefixes, different rules for each output port, 
+etc.), what you explain is not implementable.
+
+* Q2(c): you need to explain what the mechanisms exactly are, e.g., what 
+are the rules (their match/action operations) for each stage of 
+switches.
+
+* Q4: What are the AS paths towards AS1 in (a) and (b)? For (c), you 
+will need to explain why “AS2 does not know about the recover.” By 
+default, it should learn that the link recovers. If you are constructing 
+a scenario where it does not, your answer needs to explain why.
+
+* Q8(b): how is this solution high-performance compared to the original 
+MapReduce design?
+
+
+Score breakdown (Q1 to Q8):
+7
+7.5
+15
+5
+15
+15
+25
+1
+
+
+total:
+90.5
+
+
+
+---
+Soudeh Ghorbani
+Assistant Professor
+Department of Computer Science
+Johns Hopkins University
+soudeh.net
+
+On 2020-04-19 16:53, Mou Zhang wrote:
+> Assignment2 Mou Zhang
+
